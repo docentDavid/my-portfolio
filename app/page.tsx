@@ -12,7 +12,7 @@ export default async function HomePage() {
 
   return (
     <main className="p-8">
-      <h1 className="text-3xl font-bold mb-4">My Projects</h1>
+      <h1 className="text-3xl font-bold mb-4">My Portfolio</h1>
       <ul className="space-y-2">
         {projects?.map((p) => (
           <li

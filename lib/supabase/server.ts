@@ -18,8 +18,7 @@ export async function createServer() {
               cookieStore.set(name, value, options)
             );
           } catch {
-            // Called from Server Component - can't set cookies
-            // This is fine for read-only operations
+            // Called from Server Component - mutation not allowed; read-only is fine
           }
         },
       },
