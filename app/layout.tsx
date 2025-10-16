@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 
 const roboto = Roboto({
+  weight: ["400", "500", "700"],
   variable: "--font-roboto",
   subsets: ["latin"],
 });
