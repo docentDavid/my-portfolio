@@ -1,3 +1,8 @@
+Issues:
+- Alter table, remove order
+- In page.tsx sorteer op last added
+- In admin/oage.tsx sorteren op ?
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
