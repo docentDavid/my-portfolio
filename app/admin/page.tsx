@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DeleteButton from "@/app/admin/DeleteButton";
 import {
   getAllProjects,
   deleteProject,
@@ -78,21 +79,7 @@ export default async function AdminPage() {
                         Edit
                       </Link>
                       <form action={deleteProject.bind(null, project.id)}>
-                        <button
-                          type="submit"
-                          className="px-3 py-1 text-sm border border-red-300 dark:border-red-700 text-red-600 dark:text-red-400 rounded hover:bg-red-50 dark:hover:bg-red-900/20"
-                          onClick={(e) => {
-                            if (
-                              !confirm(
-                                "Are you sure you want to delete this project?"
-                              )
-                            ) {
-                              e.preventDefault();
-                            }
-                          }}
-                        >
-                          Delete
-                        </button>
+                        <DeleteButton label="Delete" />
                       </form>
                     </div>
                   </div>
