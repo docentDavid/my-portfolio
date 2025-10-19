@@ -155,7 +155,6 @@ export async function getAllProjects(): Promise<Project[]> {
   const { data, error } = await supabase
     .from("projects")
     .select("*")
-    // .order('order_index', { ascending: true })
     .order("created_at", { ascending: true });
 
   if (error) {
