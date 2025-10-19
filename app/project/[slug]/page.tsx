@@ -84,11 +84,14 @@ export default async function ProjectPage({
 
             <div className="mt-4 text-sm text-zinc-500 dark:text-zinc-400">
               <time dateTime={project.created_at}>
-                {new Date(project.created_at).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
+                This project was finished on:{" "}
+                <span className="text-zinc-900 dark:text-zinc-100">
+                  {new Date(project.created_at).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
               </time>
             </div>
           </header>
