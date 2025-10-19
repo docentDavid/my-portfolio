@@ -108,7 +108,6 @@ CREATE TABLE projects (
   tags TEXT[],
   cover_url TEXT,
   is_hidden BOOLEAN NOT NULL DEFAULT false,
-  order_index INT DEFAULT 0,
   created_at TIMESTAMPTZ DEFAULT now(),
   updated_at TIMESTAMPTZ DEFAULT now()
 );
@@ -213,21 +212,9 @@ my-portfolio/
 | tags        | TEXT[]      | Array of tags                    |
 | cover_url   | TEXT        | URL to cover image               |
 | is_hidden   | BOOLEAN     | Visibility flag                  |
-| order_index | INT         | Display order                    |
 | created_at  | TIMESTAMPTZ | Creation timestamp               |
 | updated_at  | TIMESTAMPTZ | Last update timestamp            |
 
-## Environment Variables
-
-Create a `.env.local` file with the following variables:
-
-```env
-# Supabase Configuration
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
-```
-
-**Important:** Never commit `.env.local` to version control!
 
 ## Available Scripts
 
