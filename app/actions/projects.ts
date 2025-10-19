@@ -13,10 +13,11 @@ export type Project = {
   tags: string[] | null;
   cover_url: string | null;
   is_hidden: boolean;
-  order_index: number;
   created_at: string;
   updated_at: string;
 };
+
+const DEFAULT_COVER_URL = "https://placehold.co/600x400?text=Placeholder+Image";
 
 // Helper to generate slug from title
 function generateSlug(title: string): string {
@@ -46,20 +47,18 @@ export async function createProject(formData: FormData) {
     : [];
 
   const slug = generateSlug(title);
+  const sanitizedCoverUrl =
+    cover_url && cover_url.trim() !== "" ? cover_url : DEFAULT_COVER_URL;
 
-  const { data, error } = await supabase
-    .from("projects")
-    .insert({
-      title,
-      slug,
-      summary: summary || null,
-      content: content || null,
-      tags: tags.length > 0 ? tags : null,
-      cover_url: cover_url || null,
-      is_hidden,
-    })
-    .select()
-    .single();
+  const { error } = await supabase.from("projects").insert({
+    title,
+    slug,
+    summary: summary || null,
+    content: content || null,
+    tags: tags.length > 0 ? tags : null,
+    cover_url: sanitizedCoverUrl,
+    is_hidden,
+  });
 
   if (error) {
     console.error("Create error:", error);
@@ -90,6 +89,8 @@ export async function updateProject(id: string, formData: FormData) {
     : [];
 
   const slug = generateSlug(title);
+  const sanitizedCoverUrl =
+    cover_url && cover_url.trim() !== "" ? cover_url : DEFAULT_COVER_URL;
 
   const { error } = await supabase
     .from("projects")
@@ -99,7 +100,7 @@ export async function updateProject(id: string, formData: FormData) {
       summary: summary || null,
       content: content || null,
       tags: tags.length > 0 ? tags : null,
-      cover_url: cover_url || null,
+      cover_url: sanitizedCoverUrl,
       is_hidden,
     })
     .eq("id", id);

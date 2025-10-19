@@ -1,5 +1,6 @@
 import { createServer } from "@/lib/supabase/server";
 import Link from "next/link";
+import Image from "next/image";
 
 export default async function HomePage() {
   const supabase = await createServer();
@@ -45,11 +46,15 @@ export default async function HomePage() {
               >
                 <article className="border border-zinc-200 dark:border-zinc-800 rounded-lg overflow-hidden bg-white dark:bg-zinc-900 shadow-sm hover:shadow-md transition-shadow">
                   {project.cover_url && (
-                    <img
-                      src={project.cover_url}
-                      alt={project.title}
-                      className="w-full h-48 object-cover"
-                    />
+                    <div className="relative w-full h-48">
+                      <Image
+                        src={project.cover_url}
+                        alt={project.title}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
                   )}
                   <div className="p-6">
                     <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">

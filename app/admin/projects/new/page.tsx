@@ -90,7 +90,7 @@ export default function NewProjectPage() {
             type="url"
             name="cover_url"
             id="cover_url"
-            placeholder="https://example.com/image.jpg"
+            placeholder="https://placehold.co/600x400?text=Placeholder+Image"
             className="mt-1 block w-full rounded-md border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-3 py-2 text-zinc-900 dark:text-zinc-100 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
           />
         </div>

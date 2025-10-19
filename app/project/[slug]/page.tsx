@@ -1,6 +1,7 @@
 import { createServer } from "@/lib/supabase/server";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 export default async function ProjectPage({
   params,
@@ -51,11 +52,16 @@ export default async function ProjectPage({
           )}
 
           {project.cover_url && (
-            <img
-              src={project.cover_url}
-              alt={project.title}
-              className="w-full h-96 object-cover rounded-lg mb-8"
-            />
+            <div className="relative w-full h-96 rounded-lg mb-8 overflow-hidden">
+              <Image
+                src={project.cover_url}
+                alt={project.title}
+                fill
+                sizes="(min-width: 1024px) 768px, 100vw"
+                className="object-cover"
+                priority
+              />
+            </div>
           )}
 
           <header className="mb-8">
