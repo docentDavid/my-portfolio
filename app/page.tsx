@@ -8,7 +8,7 @@ export default async function HomePage() {
     .from("projects")
     .select("*")
     .eq("is_hidden", false)
-    .order("created_at", { ascending: true });
+    .order("created_at", { ascending: false });
 
   if (error) console.error(error);
 
