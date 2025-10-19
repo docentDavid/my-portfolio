@@ -108,7 +108,6 @@ CREATE TABLE projects (
   tags TEXT[],
   cover_url TEXT,
   is_hidden BOOLEAN NOT NULL DEFAULT false,
-  order_index INT DEFAULT 0,
   created_at TIMESTAMPTZ DEFAULT now(),
   updated_at TIMESTAMPTZ DEFAULT now()
 );
@@ -203,19 +202,18 @@ my-portfolio/
 
 ### Projects Table
 
-| Column      | Type        | Description                      |
-| ----------- | ----------- | -------------------------------- |
-| id          | UUID        | Primary key                      |
-| slug        | TEXT        | URL-friendly identifier (unique) |
-| title       | TEXT        | Project title                    |
-| summary     | TEXT        | Short description                |
-| content     | TEXT        | Full project description         |
-| tags        | TEXT[]      | Array of tags                    |
-| cover_url   | TEXT        | URL to cover image               |
-| is_hidden   | BOOLEAN     | Visibility flag                  |
-| order_index | INT         | Display order                    |
-| created_at  | TIMESTAMPTZ | Creation timestamp               |
-| updated_at  | TIMESTAMPTZ | Last update timestamp            |
+| Column     | Type        | Description                      |
+| ---------- | ----------- | -------------------------------- |
+| id         | UUID        | Primary key                      |
+| slug       | TEXT        | URL-friendly identifier (unique) |
+| title      | TEXT        | Project title                    |
+| summary    | TEXT        | Short description                |
+| content    | TEXT        | Full project description         |
+| tags       | TEXT[]      | Array of tags                    |
+| cover_url  | TEXT        | URL to cover image               |
+| is_hidden  | BOOLEAN     | Visibility flag                  |
+| created_at | TIMESTAMPTZ | Creation timestamp               |
+| updated_at | TIMESTAMPTZ | Last update timestamp            |
 
 ## Environment Variables
 
