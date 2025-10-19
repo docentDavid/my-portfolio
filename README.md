@@ -215,21 +215,6 @@ my-portfolio/
 | created_at | TIMESTAMPTZ | Creation timestamp               |
 | updated_at | TIMESTAMPTZ | Last update timestamp            |
 
-## Environment Variables
-
-Create a `.env.local` file with the following variables:
-
-```env
-# Supabase Configuration
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
-
-# Optional: Service Role Key (for admin operations in Phase 2)
-# SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-```
-
-**Important:** Never commit `.env.local` to version control!
-
 ## Available Scripts
 
 ```bash
